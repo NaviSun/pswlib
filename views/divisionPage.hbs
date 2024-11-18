@@ -1,28 +1,17 @@
   <nav>
     <ul>
       <li><a href="/auth/app">Клиенты</a></li>
+      <li><a href="/auth/app/company/{{companyRes.id}}">{{companyRes.company}}</a></li>
     </ul>
 </nav>
-<div class="group-block">
-  <a class="btn" href="/auth/app/company/divisions/{{companyRes.id}}">Добавить
-    Подразделение</a>
-  <h2 class="text-primary">{{companyRes.company}}</h2>
-</div>
 
-{{#if companyRes.companyDivisions}}
-  <div>
-    <h3>Подразделения</h3>
-    {{#each companyRes.companyDivisions}}
-      <p>
-        <a href="/auth/app/company/division/{{this.id}}">{{this.name}}
-        {{#if this.adress}} {{this.adress}}{{/if}}</a></p>
-    {{/each}}
-  </div>
-{{/if}}
+
+{{companyRes.company}}
+
 <div class="group-block">
   <a class="btn" href="/auth/app/company/device/{{companyRes.id}}">Добавить
     Доступы</a>
-  <h2 class="text-primary">Все доступы компании</h2>
+  <h2 class="text-primary">Доступы подразделения</h2>
 </div>
 {{#if accessesRes}}
 <div>
@@ -47,7 +36,7 @@
           <td>{{login}}</td>
           <td>{{password}}</td>
           <td>{{method}}</td>
-          <td>{{#if division}} <a href="/auth/app/company/division/{{this.id}}">{{division}}</a>{{else}}Отсутствует{{/if}}</td>
+          <td>{{division}}</td>
         </tr>
       {{/each}}
     </tbody>

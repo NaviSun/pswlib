@@ -11,6 +11,7 @@ import {
   companyAddPage,
   divisionAddPage,
   accessesPage,
+  divisionPage,
 } from "./auth.routes.js";
 import { createCompany, createDivision } from "../controllers/company.controller.js";
 import { createCategory } from "../controllers/category.controller.js";
@@ -27,6 +28,8 @@ router.get("/auth/logout", authorization, logout);
 router.get("/auth/app", authorization, appPage);
 //Страница компании
 router.get("/auth/app/company/:id", authorization, companyPage);
+//Страница подразделения компании
+router.get("/auth/app/company/division/:id", authorization, divisionPage);
 //Страница добавления компании
 router.get("/auth/app/company", authorization, companyAddPage);
 //Справочники

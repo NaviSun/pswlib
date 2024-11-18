@@ -2,14 +2,15 @@ import mongoose from "mongoose";
 
 
 const { Schema, model } = mongoose;
+const ObjectId = Schema.Types.ObjectId
 const access = new Schema({
   companyName: {
     ref: "companynames",
     type: Schema.Types.ObjectId,
   },
-  companyDivisions: {
-    ref: "companynames",
-    type: Schema.Types.ObjectId,
+  Divisions: {
+    id: ObjectId,
+    name: String
   },
   accesses: {
     category: {

@@ -132,6 +132,13 @@ body {
 .form-group {
     padding: 10px;
 }
+
+.form-group label {
+    cursor: pointer;
+    display: block;
+    padding: 5px;
+}
+
 .group-block h2 {
     float: left;
 }

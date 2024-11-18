@@ -29,9 +29,9 @@ const companyInfo = async (id, param = '_id') => {
   return res[0]
 }
 
-const accessesCompany = async (id) => {
-  const accesses = await Accesses.find({companyName: id}).populate('accesses.category').populate('companyDivisions')
-  console.log(accesses);
+const accessesCompany = async (id, param = 'companyName') => {
+  const accesses = await Accesses.find({[`${param}`]: id}).populate('accesses.category').sort('Divisions.name')
+  console.log(param);
   if(accesses.length > 0){
     const access = accesses.map((item) => ({
       id: item._id,
@@ -40,7 +40,8 @@ const accessesCompany = async (id) => {
       login: item.accesses.login,
       password: item.accesses.password,
       method: item.accesses.method,
-      category: item.accesses.category.name
+      category: item.accesses.category.name,
+      division: item.Divisions.name
     }));
     return access
   }

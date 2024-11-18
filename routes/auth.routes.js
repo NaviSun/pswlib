@@ -28,6 +28,14 @@ const companyPage = async (req, res) => {
   return res.status(200).render("companyPage", {companyRes, accessesRes, username});
 };
 
+const divisionPage = async (req, res) => {
+  const username = req.cookies.username 
+  const companyRes = await companyInfo(req.params.id, 'companyDivisions._id')
+  const accessesRes = await accessesCompany(req.params.id, 'Divisions.id')
+  //auth/app/company/division/67361e0104c0856e8027a21e
+  return res.status(200).render("divisionPage", {companyRes, accessesRes, username});
+};
+
 //Страница добавления Компаний
 const companyAddPage = (req, res) => {
   const username = req.cookies.username 
@@ -70,4 +78,4 @@ const accessesPage = async (req, res) => {
   return res.status(200).render("accessesform", { companyRes, category, username });
 };
 
-export { appPage, compendiumPage, categoryPage, companyAddPage, accessesPage, companyPage, divisionAddPage };
+export { appPage, compendiumPage, categoryPage, companyAddPage, accessesPage, companyPage, divisionAddPage, divisionPage };
