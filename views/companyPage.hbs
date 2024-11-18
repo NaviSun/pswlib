@@ -1,0 +1,52 @@
+<div class="group-block">
+  <a class="btn" href="/auth/app/company/divisions/{{companyRes.id}}">Добавить
+    Подразделение</a>
+  <h2 class="text-primary">{{companyRes.company}}</h2>
+</div>
+
+{{#if companyRes.companyDivisions}}
+  <div>
+    {{#each companyRes.companyDivisions}}
+      <p>Подразделение
+        <a href="/auth/app/company/division/{{this.id}}"></a>{{this.name}}
+        {{#if this.adress}}Адресс: {{this.adress}}{{/if}}
+        id:
+        {{this.id}}</p>
+    {{/each}}
+  </div>
+{{/if}}
+<div class="group-block">
+  <a class="btn" href="/auth/app/company/device/{{companyRes.id}}">Добавить
+    Доступы</a>
+  <h2 class="text-primary">Все доступы компании</h2>
+</div>
+{{#if accessesRes}}
+<div>
+  <table class="table-info">
+    <thead>
+      <tr>
+        <th>Имя</th>
+        <th>Категория</th>
+        <th>Хост</th>
+        <th>Логин</th>
+        <th>Пароль</th>
+        <th>Метод подключения</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each accessesRes}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{category}}</td>
+          <td>{{host}}</td>
+          <td>{{login}}</td>
+          <td>{{password}}</td>
+          <td>{{method}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
+{{else}}
+<p>Нет Доступов</p>
+{{/if}}

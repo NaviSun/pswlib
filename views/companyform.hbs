@@ -1,0 +1,31 @@
+        <h2 class="text-primary">Добавить Компанию</h2>
+        <form id="contact-form" action="/auth/app/company/createcompany" method="POST" class="tm-contact-form">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Клиент</span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Клиент"
+              aria-label="Клиент"
+              aria-describedby="basic-addon1"
+              name="companyName"
+            />
+            </div>
+            <span><input
+              type="checkbox"
+              class="form-checkbox"
+              placeholder="Статус Обслуживания"
+              name="status"
+              value="true"
+            />Обслуживаниется по договору</span>
+            
+          </div>
+          <div class="form-group">
+              <button
+                type="submit"
+                class="btn"
+              >Добавить</button>
+          </div>
+        </form>

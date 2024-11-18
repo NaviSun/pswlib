@@ -1,0 +1,56 @@
+
+    <div class="col-md-8 mx-auto">
+      <h2 class="tm-text-primary">Добавить Доступ Компании</h2>
+      {{! шапка }}
+<form  action="/auth/app/company/createdevice"
+        method="POST"
+        class="form-horizontal">
+
+<div class="form-group">
+  <div class="col-md-6">
+      <span>{{companyRes.company}}</span><input name="company_id" type="hidden" value="{{companyRes.id}}">
+  </div>
+</div>
+{{#if companyRes.companyDivisions}}
+<div>
+  <label class="col-md-4 control-label" for="selectbasic">Выберите Подразделение</label>
+</div>
+  <select id="selectbasic" name="companyDivisions" class="form-control" required>
+       <option value="">Выберите из списка</option>
+            {{#each companyRes.companyDivisions}}
+              <option value="{{this.id}}">{{this.name}}</option>
+            {{/each}}
+    </select>
+  {{/if}}
+<!-- Select Basic -->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="selectbasic">Выберите категорию</label>
+  <div class="col-md-6">
+    <select id="selectbasic" name="category_id" class="form-control" required>
+       <option value="">Выберите из списка</option>
+            {{#each category}}
+              <option value="{{this.id}}">{{this.name}}</option>
+            {{/each}}
+    </select>
+  </div>
+</div>
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="textinput">Имя</label>  
+  <div class="col-md-6">
+  <input name="accessname" type="text" placeholder="Имя Доступа" class="form-control input-md" required>
+  <input name="host" type="text" placeholder="HOST" class="form-control input-md" required>
+  <input name="login" type="text" placeholder="Login" class="form-control input-md" required>
+  <input name="password" type="password" placeholder="Password" class="form-control input-md" required>
+  <input name="method" type="text" placeholder="Метод подключения" class="form-control input-md" required>
+  </div>
+
+<!-- Button -->
+<div class="form-group">
+  <div class="col-md-4">
+    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Добавить Доступ</button>
+  </div>
+</div>
+</form>
+</div>

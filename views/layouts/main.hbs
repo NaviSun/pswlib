@@ -1,0 +1,40 @@
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Оптима-Крым</title>
+    <link rel="stylesheet" href="/css/style.css" />
+  </head>
+  <body>
+    <div class="container_header">
+      <header class="page_header">
+        <div class="logo">
+          <span class="logoname">Оптима-Крым</span>
+        </div>
+        <div class="search_blok"><input class="input_search" name="searchvalue" placeholder="Пока недоступно" "text"></div>
+        <div class="profile_block"><span>{{username}}</span></div>
+      </header>
+      <div class="hr"></div>
+      <div class="main_container">
+      {{>sidebar}}
+      <div class="content_container">
+        <main>
+          <div class="container">
+              {{{body}}}
+          </div>
+          
+        </main>
+      </div>      
+</div>
+
+
+
+
+       {{!--  
+        
+        
+        {{>footer}} --}}
+
+    </div>
+  </body>
+</html>

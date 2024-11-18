@@ -1,0 +1,36 @@
+        <h2 class="text-primary">Добавить Подразделение</h2>
+        <form id="contact-form" action="/auth/app/company/division/createdivision" method="POST" class="tm-contact-form">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Подразделение</span>
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Имя"
+              aria-label="Имя"
+              aria-describedby="basic-addon1"
+              name="divisionName"
+            />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Адресс"
+              aria-label="Адресс"
+              aria-describedby="basic-addon1"
+              name="adress"
+            />
+            <input
+              type="hidden"
+              name="id"
+              value="{{id}}"
+            />
+            </div>
+          </div>
+          <div class="form-group">
+              <button
+                type="submit"
+                class="btn"
+              >Добавить</button>
+          </div>
+        </form>

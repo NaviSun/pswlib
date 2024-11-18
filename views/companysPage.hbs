@@ -1,0 +1,19 @@
+  <a class="btn" href="/auth/app/company">Добавить Компанию</a>
+  <table class="table-info">
+    <thead>
+      <tr>
+        <th>Дата Создания</th>
+        <th>Имя Клиента</th>
+        <th>Статус обслуживания</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each companyNames}}
+        <tr>
+          <td>{{#if date}}{{date}}{{else}}Дата{{/if}}</td>
+          <td><a href="/auth/app/company/{{id}}">{{company}}</a></td>
+          <td>{{#if status}}&#9989;{{else}}&#10006;{{/if}}</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
